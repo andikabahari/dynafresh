@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Dynafresh",
+  "version": "1.0",
+  "description": "Customize autorefresh for Dynatrace",
+  "icons": {
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png"
+  },
+  "action": {
+    "default_popup": "popups/default.html"
+  },
+  "permissions": ["tabs", "scripting"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"]
+}
