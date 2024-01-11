@@ -22,7 +22,8 @@ form.addEventListener('submit', (e) => {
           target: { tabId: tabs[0].id, allFrames: true },
           func: (refreshInterval) => {
             let appRoot, timeFrame, preset
-            const n = Math.ceil(Number(refreshInterval)) || 1
+            const n = Math.ceil(Number(refreshInterval)) || 30
+            if (n < 5) n = 5
             const seconds = 1000
             setInterval(() => {
               appRoot = document.querySelector('app-root')
