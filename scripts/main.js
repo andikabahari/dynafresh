@@ -12,7 +12,6 @@ form.addEventListener('submit', (e) => {
 
   chrome.permissions.request(
     {
-      permissions: ['tabs'],
       origins: [dynatraceProblemsPage],
     },
     (granted) => {
@@ -22,10 +21,23 @@ form.addEventListener('submit', (e) => {
           chrome.scripting.executeScript({
             target: { tabId: firstTab.id, allFrames: true },
             func: (refreshInterval) => {
-              console.log(`akan refresh per ${refreshInterval} detik`)
-              const timeFrameNav = document.querySelector(
-                'a.label-box.ng-star-inserted'
-              )
+              let appRoot, timeFrame, preset
+              const n = Math.ceil(Number(refreshInterval)) || 1
+              const seconds = 1000
+              setInterval(() => {
+                appRoot = document.querySelector('app-root')
+                timeFrame = appRoot.querySelector(
+                  'a.label-box.ng-star-inserted'
+                )
+                if (timeFrame) {
+                  timeFrame.click()
+                  appRoot = document.querySelector('app-root')
+                }
+                preset = appRoot.querySelector(
+                  'a.predefined-item.ng-star-inserted'
+                )
+                if (preset) preset.click()
+              }, n * seconds)
             },
             args: [refreshInterval],
           })
@@ -33,4 +45,6 @@ form.addEventListener('submit', (e) => {
       }
     }
   )
+
+  window.close()
 })
