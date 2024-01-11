@@ -35,7 +35,8 @@
       display: block;
     }
 
-    .input[type='text'] {
+    .input[type='url'],
+    .input[type='number'] {
       width: 100%;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -74,11 +75,23 @@
     <form id="form">
       <div class="group">
         <label class="label">Dynatrace Problems Page</label>
-        <input class="input" type="text" name="dynatrace_problems_page" />
+        <input
+          class="input"
+          type="url"
+          name="dynatrace_problems_page"
+          required
+        />
       </div>
       <div class="group">
         <label class="label">Refresh Interval (seconds)</label>
-        <input class="input" type="text" name="refresh_interval" />
+        <input
+          class="input"
+          type="number"
+          name="refresh_interval"
+          min="5"
+          value="30"
+          required
+        />
       </div>
       <button class="button" type="submit">Save</button>
     </form>
