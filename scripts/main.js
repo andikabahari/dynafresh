@@ -46,20 +46,3 @@ form.addEventListener('submit', (e) => {
 
   window.close()
 })
-
-const refreshPage = (refreshInterval) => {
-  let appRoot, timeFrame, preset
-  const n = Math.ceil(Number(refreshInterval)) || 1
-  const seconds = 1000
-  setInterval(() => {
-    appRoot = document.querySelector('app-root')
-    if (!appRoot) return
-    timeFrame = appRoot.querySelector('a.label-box.ng-star-inserted')
-    if (timeFrame) {
-      timeFrame.click()
-      appRoot = document.querySelector('app-root')
-    }
-    preset = appRoot.querySelector('a.predefined-item.ng-star-inserted')
-    if (preset) preset.click()
-  }, n * seconds)
-}
