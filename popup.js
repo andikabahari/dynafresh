@@ -3,6 +3,7 @@
 const refreshTab = (tabId, refreshInterval) => {
   chrome.scripting.executeScript({
     target: { tabId, allFrames: true },
+    args: [refreshInterval],
     func: (refreshInterval) => {
       const doRefresh = () => {
         const timeFrameNav = document.querySelector(
@@ -24,7 +25,6 @@ const refreshTab = (tabId, refreshInterval) => {
         setInterval(doRefresh, refreshInterval)
       )
     },
-    args: [refreshInterval],
   })
 }
 
