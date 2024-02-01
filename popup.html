@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <title>Dynafresh</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 16px 8px;
+    }
+
+    .title {
+      color: #334155;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .group {
+      margin-bottom: 12px;
+    }
+
+    .label {
+      color: #334155;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .input[type='url'],
+    .input[type='number'] {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 6px;
+    }
+
+    .button {
+      width: 100%;
+      background-color: #4299e1;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 4px solid #2b6cb0;
+      border-radius: 4px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    .button:hover {
+      background-color: #0ea5e9;
+      cursor: pointer;
+      -webkit-transition: 600ms;
+    }
+
+    .button:active {
+      background-color: #2b6cb0;
+      border-color: #4299e1;
+      -webkit-transition: none;
+    }
+  </style>
+  <body>
+    <h3 class="title">Dynafresh</h3>
+    <form id="form">
+      <div class="group">
+        <label class="label">Refresh Interval (seconds)</label>
+        <input
+          class="input"
+          type="number"
+          name="refresh_interval"
+          min="5"
+          value="30"
+          required
+        />
+      </div>
+      <button class="button" type="submit">Save</button>
+    </form>
+    <script src="popup.js"></script>
+  </body>
+</html>

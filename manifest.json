@@ -2,10 +2,10 @@
   "manifest_version": 3,
   "name": "Dynafresh",
   "version": "1.0",
-  "description": "Customize autorefresh for Dynatrace",
+  "description": "Custom autorefresh for Dynatrace",
   "action": {
-    "default_popup": "popups/default.html"
+    "default_popup": "popup.html"
   },
-  "permissions": ["tabs", "scripting"],
-  "optional_host_permissions": ["https://*/*", "http://*/*"]
+  "permissions": ["tabs", "scripting", "webNavigation"],
+  "host_permissions": ["https://*/*", "http://*/*"]
 }
