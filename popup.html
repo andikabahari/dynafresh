@@ -1,62 +1,91 @@
-'use strict'
+<html>
+  <head>
+    <title>Dynafresh</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
 
-const refreshTab = (tabId, refreshInterval) => {
-  chrome.scripting.executeScript({
-    target: { tabId, allFrames: true },
-    args: [refreshInterval],
-    func: (refreshInterval) => {
-      const doRefresh = () => {
-        const timeFrameNavClass = 'app-root a.label-box.ng-star-inserted'
-        document.querySelector(timeFrameNavClass)?.click()
-        const refreshBtnClass = 'app-root a.predefined-item.ng-star-inserted'
-        document.querySelector(refreshBtnClass)?.click()
-      }
+    body {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 16px 8px;
+    }
 
-      window.addEventListener('load', () =>
-        setInterval(doRefresh, refreshInterval)
-      )
-    },
-  })
-}
+    .title {
+      color: #334155;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
 
-const handleSubmit = async (event) => {
-  event.preventDefault()
+    .group {
+      margin-bottom: 12px;
+    }
 
-  let refreshInterval = Math.ceil(
-    Number(document.querySelector('input[name=refresh_interval]').value)
-  )
+    .label {
+      color: #334155;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 6px;
+      display: block;
+    }
 
-  const secondInMilliseconds = 1000
-  if (refreshInterval < 5) {
-    refreshInterval = 5 * secondInMilliseconds
-  } else {
-    refreshInterval *= secondInMilliseconds
-  }
+    .input {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 4px 6px;
+    }
 
-  const [tab] = await chrome.tabs.query({
-    active: true,
-    lastFocusedWindow: true,
-  })
+    .input[readonly] {
+      background-color: #eee;
+    }
 
-  chrome.tabs.reload(tab.id)
+    .button {
+      width: 100%;
+      background-color: #4299e1;
+      color: #fff;
+      font-weight: bold;
+      font-size: 12px;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 4px solid #2b6cb0;
+      border-radius: 4px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
 
-  chrome.webNavigation.onCommitted.addListener(
-    async ({ transitionType }) => {
-      if (transitionType != 'reload') {
-        return
-      }
+    .button:hover {
+      background-color: #0ea5e9;
+      cursor: pointer;
+      -webkit-transition: 600ms;
+    }
 
-      const granted = await chrome.permissions.request({ origins: [tab.url] })
-      if (!granted) {
-        return
-      }
-
-      refreshTab(tab.id, refreshInterval)
-    },
-    { tadId: tab.id }
-  )
-
-  window.close()
-}
-
-document.getElementById('form').addEventListener('submit', handleSubmit)
+    .button:active {
+      background-color: #2b6cb0;
+      border-color: #4299e1;
+      -webkit-transition: none;
+    }
+  </style>
+  <body>
+    <h3 class="title">Dynafresh</h3>
+    <form id="form">
+      <div class="group">
+        <label class="label">Refresh Interval</label>
+        <select class="input" name="refresh_interval" required>
+          <option id="refresh-interval-5" value="5">5 seconds</option>
+          <option id="refresh-interval-10" value="10">10 seconds</option>
+          <option id="refresh-interval-30" value="30">30 seconds</option>
+        </select>
+      </div>
+      <button class="button" type="submit">Save</button>
+    </form>
+    <script src="popup.js"></script>
+  </body>
+</html>

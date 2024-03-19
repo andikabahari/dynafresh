@@ -1,0 +1,132 @@
+{
+  "data": [
+    {
+      "alertRegex": "WebLogic .+admin: (Long garbage-collection time|Memory resources exhausted|Connectivity problem|Response time degredation|Failure rate|Failed database connects|Multiple infrastructure problems)",
+      "knowledgeId": "700007848"
+    },
+    {
+      "alertRegex": "MyBCA Individu Mobile: Mobile app crash rate increase",
+      "knowledgeId": "700012202"
+    },
+    {
+      "alertRegex": "JBoss domain jboss-eap-\\* \\(webchat_app_.+\\): Long garbage-collection time",
+      "knowledgeId": "700011391"
+    },
+    {
+      "alertRegex": "OpeningController: Failure rate increase",
+      "knowledgeId": "700008669"
+    },
+    {
+      "alertRegex": "(waweb|clusterStore) - 3316: Failed database connects",
+      "knowledgeId": "700011494"
+    },
+    {
+      "alertRegex": "CallController: Failure rate increase",
+      "knowledgeId": "700011824"
+    },
+    {
+      "alertRegex": ".+_eai_.+: Response time degradation",
+      "knowledgeId": "700010413"
+    },
+    {
+      "alertRegex": "RMI app_kbi-(Payment|Purchase)-(Telephone|Electricity-PLN|PLNPrabayar): (Failure rate increase|Response time degradation)",
+      "knowledgeId": "700007136"
+    },
+    {
+      "alertRegex": "oln2eaiosb01: CPU saturation",
+      "knowledgeId": "700011488"
+    },
+    {
+      "alertRegex": "IIS: Connectivity problem",
+      "knowledgeId": "700012218"
+    },
+    {
+      "alertRegex": "(MITRACOMM|PLUS|PRISMALINK|SPRINT|SYB|RINTIS|FASPAY|MIDTRANS|NICEPAY) Switcher: Failure rate increase",
+      "knowledgeId": "700006639"
+    },
+    {
+      "alertRegex": "(MITRACOMM|PLUS|PRISMALINK|SPRINT|SYB|RINTIS|FASPAY|MIDTRANS|NICEPAY) Switcher: Response time degradation",
+      "knowledgeId": "700007368"
+    },
+    {
+      "alertRegex": "\\/mnt\\/buzz\\/ejabberd\\/\\/ejabberd-17\\.11\\/bin\\/erl: Connectivity problem",
+      "knowledgeId": "700012153"
+    },
+    {
+      "alertRegex": "(CreditCardController|PaymentPurchaseTemplate98Controller|PaylaterRest): Failure rate increase",
+      "knowledgeId": "700008971"
+    },
+    {
+      "alertRegex": "pibs - 1521: Failed database connects",
+      "knowledgeId": "700011651"
+    },
+    {
+      "alertRegex": "application oneklik-(registration|credentials|activations): Response time degradation",
+      "knowledgeId": "700010485"
+    },
+    {
+      "alertRegex": "pibc1 - .+: Response time degradation",
+      "knowledgeId": "700010656"
+    },
+    {
+      "alertRegex": "localhost IIS app pool SC93\\.cd: Failure rate increase",
+      "knowledgeId": "700011816"
+    },
+    {
+      "alertRegex": "CustomerProfileController: Failure Rate Increase",
+      "knowledgeId": "700011848"
+    },
+    {
+      "alertRegex": "MyBCA Individu Web: JavaScript error rate increase",
+      "knowledgeId": "700012201"
+    },
+    {
+      "alertRegex": "IIS app pool SC93\\.cd: Long garbage-collection time",
+      "knowledgeId": "700011607"
+    },
+    {
+      "alertRegex": "RMI app_fo_kbb - JCAPSWebServiceBean: Failure rate increase",
+      "knowledgeId": "700011170"
+    },
+    {
+      "alertRegex": "AuthController: Failure rate increase",
+      "knowledgeId": "700011810"
+    },
+    {
+      "alertRegex": "Server Video Call \\(FAS\\): (Response time degradation|Failure rate increase)",
+      "knowledgeId": "700011724"
+    },
+    {
+      "alertRegex": "WSListener: Failure rate increase",
+      "knowledgeId": "700011806"
+    },
+    {
+      "alertRegex": "RMI app_kbi: Failure rate increase",
+      "knowledgeId": "700008933"
+    },
+    {
+      "alertRegex": "ProvisController: Failure rate increase",
+      "knowledgeId": "700012145"
+    },
+    {
+      "alertRegex": "(fe|gw)-chain: Failure rate increase",
+      "knowledgeId": "700011324"
+    },
+    {
+      "alertRegex": "PDWHIBS2 - 1522: Failed database connects",
+      "knowledgeId": "700006337"
+    },
+    {
+      "alertRegex": "RH\\dWBCHATELS: Failure rate increase",
+      "knowledgeId": "700011596"
+    },
+    {
+      "alertRegex": "BagiBagiController: Failure rate increase",
+      "knowledgeId": "700011855"
+    },
+    {
+      "alertRegex": "(PHP on FPM pool www|MessageApi2 SpringBoot id\\.co\\.bca\\.whatsapp\\.whatsappchat\\.WhatsappchatApplication \\(PROD\\)): Response time degradation",
+      "knowledgeId": "700012111"
+    }
+  ]
+}
